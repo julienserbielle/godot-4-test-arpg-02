@@ -2792,7 +2792,8 @@ texture = ExtResource("4_ljwu8")
 0:0/2/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_s00r6"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "sand"
 terrain_set_0/terrain_0/color = Color(0.545098, 0.239216, 0.560784, 1)
