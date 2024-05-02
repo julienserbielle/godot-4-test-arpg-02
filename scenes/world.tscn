@@ -2845,7 +2845,7 @@ position = Vector2(168, 40)
 endPoint = NodePath("Marker2DSlimeB")
 
 [node name="Marker2DSlimeB" type="Marker2D" parent="TileMap/slimeB"]
-position = Vector2(32, 24)
+position = Vector2(16, 40)
 
 [node name="slimeC" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("4_cnk2d")]
 position = Vector2(160, 128)
