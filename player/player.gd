@@ -40,7 +40,7 @@ func _physics_process(delta):
 
 func _on_hurt_box_area_entered(area):
 	if area.name == "hitBox":
-		currentHealth = -1
+		currentHealth -= 1
 		if currentHealth < 0:
 			currentHealth = maximumHealth
 		print_debug(currentHealth)
