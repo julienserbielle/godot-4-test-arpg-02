@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmnbsihua2oq0"]
+[gd_scene load_steps=13 format=3 uid="uid://dmnbsihua2oq0"]
 
 [ext_resource type="PackedScene" uid="uid://cofkamki0t4jm" path="res://player/player.tscn" id="1_i31hh"]
+[ext_resource type="Script" path="res://scenes/world.gd" id="1_qyc4d"]
 [ext_resource type="Texture2D" uid="uid://blgaqknh0uqtt" path="res://art/TilesetFloor.png" id="2_1bjfa"]
 [ext_resource type="Texture2D" uid="uid://pmpp36l3licq" path="res://art/TilesetNature.png" id="3_2wwru"]
 [ext_resource type="PackedScene" uid="uid://dg0ercrgyai86" path="res://enemies/slime.tscn" id="4_cnk2d"]
@@ -2809,6 +2810,7 @@ sources/2 = SubResource("TileSetAtlasSource_hryll")
 [node name="world" type="Node2D"]
 z_index = 1
 y_sort_enabled = true
+script = ExtResource("1_qyc4d")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -2861,6 +2863,4 @@ position = Vector2(64, 0)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -50.0
-offset_right = 0.0
 grow_horizontal = 0
