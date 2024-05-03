@@ -5,6 +5,7 @@
 [node name="heartsContainer" type="HBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/separation = 1
 
 [node name="heartGUI" parent="." instance=ExtResource("1_uw6ua")]
 layout_mode = 2
