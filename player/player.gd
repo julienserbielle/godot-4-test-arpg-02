@@ -10,6 +10,8 @@ signal healthChanged
 @export var maximumHealth = 3
 @onready var currentHealth: int = maximumHealth
 
+@export var knockbackPower: int = 500
+
 
 
 func handleInput():
@@ -49,3 +51,10 @@ func _on_hurt_box_area_entered(area):
 			currentHealth = maximumHealth
 		
 		healthChanged.emit(currentHealth)
+		knockback(area.get_parent().velocity)
+		
+func knockback(enemyVelocity):
+	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
+	velocity = knockbackDirection
+	move_and_slide()
+	
