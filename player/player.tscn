@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cofkamki0t4jm"]
+[gd_scene load_steps=14 format=3 uid="uid://cofkamki0t4jm"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_vpvi1"]
 [ext_resource type="Texture2D" uid="uid://b5dc5vnjk5x4u" path="res://art/playerSprite.png" id="2_k1tpo"]
@@ -96,11 +96,50 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_temvd"]
-size = Vector2(14, 4)
+size = Vector2(12, 4)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cpmd"]
 radius = 6.0
 height = 14.0
+
+[sub_resource type="Animation" id="Animation_6cpug"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.117647, 0.0745098, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6ddf4"]
+resource_name = "hurtBlink"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.117647, 0.0745098, 0.458824), Color(1, 0.996078, 0.992157, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ffksl"]
+_data = {
+"RESET": SubResource("Animation_6cpug"),
+"hurtBlink": SubResource("Animation_6ddf4")
+}
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -109,10 +148,18 @@ texture_filter = 1
 script = ExtResource("1_vpvi1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+clip_children = 2
 texture = ExtResource("2_k1tpo")
 offset = Vector2(0, -8)
 hframes = 4
 vframes = 7
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -12.0
+offset_top = -18.0
+offset_right = 28.0
+offset_bottom = 22.0
+color = Color(1, 0.117647, 0.0745098, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -129,5 +176,13 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_3cpmd")
+
+[node name="Effects" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ffksl")
+}
+
+[node name="hurtTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
