@@ -9,10 +9,12 @@ signal healthChanged
 @onready var effects = $Effects
 @onready var hurtTimer = $hurtTimer
 
-@export var maximumHealth = 1
+@export var maximumHealth = 3
 @onready var currentHealth: int = maximumHealth
 
 @export var knockbackPower: int = 500
+
+var isHurt: bool = false
 
 func _ready():
 	effects.play("RESET")
@@ -48,17 +50,20 @@ func _physics_process(delta):
 
 
 func _on_hurt_box_area_entered(area):
+	if isHurt: return
 	if area.name == "hitBox":
 		currentHealth -= 1
 		if currentHealth < 0:
 			currentHealth = maximumHealth
 		
 		healthChanged.emit(currentHealth)
+		isHurt = true
 		knockback(area.get_parent().velocity)
 		effects.play("hurtBlink")
 		hurtTimer.start()
 		await hurtTimer.timeout
 		effects.play("RESET")
+		isHurt = false
 		
 func knockback(enemyVelocity):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
