@@ -62,18 +62,6 @@ func _on_hurt_box_area_entered(area):
 	if area.name == "hitBox":
 		enemyCollisions.append(area)
 		
-		currentHealth -= 1
-		if currentHealth < 0:
-			currentHealth = maximumHealth
-		
-		healthChanged.emit(currentHealth)
-		isHurt = true
-		knockback(area.get_parent().velocity)
-		effects.play("hurtBlink")
-		hurtTimer.start()
-		await hurtTimer.timeout
-		effects.play("RESET")
-		isHurt = false
 		
 func knockback(enemyVelocity):
 	var knockbackDirection = (enemyVelocity - velocity).normalized() * knockbackPower
