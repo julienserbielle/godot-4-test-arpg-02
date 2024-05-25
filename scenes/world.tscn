@@ -2834,7 +2834,7 @@ position = Vector2(0, 48)
 
 [node name="Player" parent="TileMap" instance=ExtResource("1_i31hh")]
 position = Vector2(112, 60)
-knockbackPower = 1000
+knockbackPower = 500
 
 [node name="following cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 limit_left = 0
