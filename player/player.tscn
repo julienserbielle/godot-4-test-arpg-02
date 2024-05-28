@@ -146,6 +146,7 @@ z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_vpvi1")
+knockbackPower = 250
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2
