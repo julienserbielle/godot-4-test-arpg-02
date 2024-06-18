@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://gui/inventory_gui.gd" id="1_bdvnt"]
 [ext_resource type="Texture2D" uid="uid://bq46aasranbml" path="res://art/InventoryRect.png" id="1_cttqo"]
-[ext_resource type="PackedScene" uid="uid://cpkcn8vorihud" path="res://gui/slot.tscn" id="2_tvqii"]
+[ext_resource type="PackedScene" uid="uid://cpkcn8vorihud" path="res://gui/slot_gui.tscn" id="3_28kht"]
 
 [node name="InventoryGui" type="Control"]
 custom_minimum_size = Vector2(136, 88)
@@ -37,47 +37,47 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 5
 
-[node name="Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
 
-[node name="Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("2_tvqii")]
+[node name="Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_28kht")]
 layout_mode = 2
